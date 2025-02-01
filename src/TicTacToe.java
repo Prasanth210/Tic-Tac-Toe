@@ -7,8 +7,6 @@ public class TicTacToe {
         board = new char[row][col];
         init();
         disp();
-        place(0,0,'O');
-        place(1,0,'X');
         check();
     }
     void init(){
@@ -35,7 +33,6 @@ public class TicTacToe {
         if(r>=0  && r<=row && c>=0 && c<=col){
             board[r][c] = p;
         }
-        disp();
     }
 
     boolean check(){
@@ -54,11 +51,22 @@ public class TicTacToe {
 
         //diogonal check
         for(int n=0;n<row;n++){
-            if(board[0][0] == board[1][1] && board[1][1] == board[2][2] || board[0][2] == board[1][1] && board[1][1] == board[2][0] ){
+            if(board[1][1] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2] || board[1][1] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0] ){
                 return true;
             }
         }
 
         return false;
+    }
+
+    boolean isfill(){
+        for(int n=0;n<row;n++){
+            for(int p=0;p<col;p++){
+                if(board[n][p] == ' '){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
