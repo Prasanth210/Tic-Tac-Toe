@@ -2,16 +2,35 @@ import java.util.*;
 public class Launcher {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
         TicTacToe game = new TicTacToe();
+
         game.Call(3,3);
-        String n1=scan.nextLine();
-        String n2=scan.nextLine();
 
-        Human p1=new Human(n1,'X',game);
-        Computer p2= new Computer(n2,'O',game);
+        System.out.println("Choose Game Mode:");
+        System.out.println("1. Two Player Mode");
+        System.out.println("2. Play Against Computer");
 
-        Player cp;
-        cp=p1;
+        int choice = scan.nextInt();
+        scan.nextLine();
+
+        Player p1,p2;
+
+        System.out.println("Enter player one name : ");
+            String n1=scan.nextLine();
+            p1=new Human(n1,'X',game);
+
+        if(choice == 1) {
+            System.out.println("Enter player two name : ");
+            String n2=scan.nextLine();
+            p2=new Human(n2,'X',game);
+        }
+        else{
+            p2= new Computer("Computer",'O',game);
+        }
+
+
+        Player cp = p1;
 
         while(!game.isfill()){
             System.out.println(cp.name + " turn now ");
