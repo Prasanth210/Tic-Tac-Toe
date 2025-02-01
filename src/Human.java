@@ -1,8 +1,6 @@
 import java.util.Scanner;
-public class Human {
-    String name;
-    char sym;
-    TicTacToe ob ;
+class Human extends Player {
+
     Human(String name,char sym,TicTacToe ob){
         this.name=name;
         this.sym=sym;
@@ -20,12 +18,5 @@ public class Human {
         }while(!isvalid(row,col));
         ob.place(row,col,sym);
     }
-    boolean isvalid(int row,int col){
-        if(row>=0 && row <=2 && col >=0 && col<=2){
-            if(ob.board[row][col] == ' '){
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

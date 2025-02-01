@@ -8,9 +8,9 @@ public class Launcher {
         String n2=scan.nextLine();
 
         Human p1=new Human(n1,'X',game);
-        Human p2=new Human(n2,'O',game);
+        Computer p2= new Computer(n2,'O',game);
 
-        Human cp;
+        Player cp;
         cp=p1;
 
         while(!game.isfill()){
