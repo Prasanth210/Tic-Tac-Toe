@@ -11,6 +11,7 @@ abstract class Player {
                 return true;
             }
         }
+        System.out.println("Please enter a valid Position ");
         return false;
     }
 }

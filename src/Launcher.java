@@ -31,7 +31,7 @@ public class Launcher {
 
 
         Player cp = p1;
-
+        boolean won=false;
         while(!game.isfill()){
             System.out.println(cp.name + " turn now ");
             cp.makemove();
@@ -39,11 +39,13 @@ public class Launcher {
             game.disp();
             if(game.check()){
                 System.out.println(cp.name + " has won the Game");
+                won=true;
                 break;
+
             }
             cp = (cp == p1) ? p2 : p1;
             }
-        if(game.isfill()){
+        if(game.isfill() && !won){
             System.out.println("Game is Draw!!");
         }
     }
