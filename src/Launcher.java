@@ -23,7 +23,7 @@ public class Launcher {
         if(choice == 1) {
             System.out.println("Enter player two name : ");
             String n2=scan.nextLine();
-            p2=new Human(n2,'X',game);
+            p2=new Human(n2,'O',game);
         }
         else{
             p2= new Computer("Computer",'O',game);
